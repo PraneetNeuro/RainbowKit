@@ -42,6 +42,13 @@
 	<string>13A1030d</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>12.0</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict/>
+	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string></string>
 	<key>NSMainStoryboardFile</key>

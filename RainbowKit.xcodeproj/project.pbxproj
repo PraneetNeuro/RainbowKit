@@ -11,7 +11,7 @@
 		B7BC2C582728323D008C7403 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC2C572728323D008C7403 /* ViewController.swift */; };
 		B7BC2C5A2728323F008C7403 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7BC2C592728323F008C7403 /* Assets.xcassets */; };
 		B7BC2C5D2728323F008C7403 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7BC2C5B2728323F008C7403 /* Main.storyboard */; };
-		B7BC2C682728343A008C7403 /* Driver.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BC2C652728343A008C7403 /* Driver.m */; };
+		B7BC2C6E27288071008C7403 /* Driver.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BC2C6C27288071008C7403 /* Driver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,9 +22,9 @@
 		B7BC2C5C2728323F008C7403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B7BC2C5E2728323F008C7403 /* RainbowKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RainbowKit.entitlements; sourceTree = "<group>"; };
 		B7BC2C642728343A008C7403 /* RainbowKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RainbowKit-Bridging-Header.h"; sourceTree = "<group>"; };
-		B7BC2C652728343A008C7403 /* Driver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Driver.m; path = ../../Rainbow/Rainbow/Driver.m; sourceTree = "<group>"; };
-		B7BC2C662728343A008C7403 /* Driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Driver.h; path = ../../Rainbow/Rainbow/Driver.h; sourceTree = "<group>"; };
 		B7BC2C6927283AA1008C7403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B7BC2C6C27288071008C7403 /* Driver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Driver.m; sourceTree = "<group>"; };
+		B7BC2C6D27288071008C7403 /* Driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Driver.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +57,9 @@
 		B7BC2C542728323D008C7403 /* RainbowKit */ = {
 			isa = PBXGroup;
 			children = (
+				B7BC2C6D27288071008C7403 /* Driver.h */,
+				B7BC2C6C27288071008C7403 /* Driver.m */,
 				B7BC2C6927283AA1008C7403 /* Info.plist */,
-				B7BC2C662728343A008C7403 /* Driver.h */,
-				B7BC2C652728343A008C7403 /* Driver.m */,
 				B7BC2C552728323D008C7403 /* AppDelegate.swift */,
 				B7BC2C572728323D008C7403 /* ViewController.swift */,
 				B7BC2C592728323F008C7403 /* Assets.xcassets */,
@@ -142,7 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7BC2C582728323D008C7403 /* ViewController.swift in Sources */,
-				B7BC2C682728343A008C7403 /* Driver.m in Sources */,
+				B7BC2C6E27288071008C7403 /* Driver.m in Sources */,
 				B7BC2C562728323D008C7403 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

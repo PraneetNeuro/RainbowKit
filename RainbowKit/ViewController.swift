@@ -7,6 +7,15 @@
 
 import Cocoa
 
+extension NSImage {
+    convenience init(color: NSColor, size: NSSize) {
+        self.init(size: size)
+        lockFocus()
+        color.drawSwatch(in: NSRect(origin: .zero, size: size))
+        unlockFocus()
+    }
+}
+
 extension NSColor {
     func toHexString() -> String {
         var r:CGFloat = 0
@@ -46,6 +55,13 @@ class ViewController: NSViewController {
         self.colorInContext = driver?.runLoop() ?? .white
         hexCodeForColorInContext.stringValue = self.colorInContext.toHexString()
         view.layer?.backgroundColor = CGColor(red: colorInContext.redComponent, green: colorInContext.greenComponent, blue: colorInContext.blueComponent, alpha: colorInContext.alphaComponent)
+        let appDockTile =  NSApplication.shared.dockTile
+        let appImageView = NSImageView(image: NSImage(color: self.colorInContext, size: NSSize(width: 128, height: 128)))
+        appImageView.wantsLayer = true
+        appImageView.layer?.borderWidth = 1
+        appImageView.layer?.cornerRadius = 16
+        appDockTile.contentView = appImageView
+        appDockTile.display()
     }
     
     override func viewDidLoad() {
