@@ -54,9 +54,19 @@ class ViewController: NSViewController {
     func updateColorInContext() {
         self.colorInContext = driver?.runLoop() ?? .white
         hexCodeForColorInContext.stringValue = self.colorInContext.toHexString()
-        view.layer?.backgroundColor = CGColor(red: colorInContext.redComponent, green: colorInContext.greenComponent, blue: colorInContext.blueComponent, alpha: colorInContext.alphaComponent)
+        view.layer?.backgroundColor = CGColor(red: colorInContext.redComponent, green: colorInContext.greenComponent, blue: colorInContext.blueComponent, alpha: 1.0)
         let appDockTile =  NSApplication.shared.dockTile
-        let appImageView = NSImageView(image: NSImage(color: self.colorInContext, size: NSSize(width: 128, height: 128)))
+//        let appImageView = NSImageView(image: NSImage(color: self.colorInContext, size: NSSize(width: 128, height: 128)))
+        let appImageView = NSImageView(image: NSImage(size: NSSize(width: 128, height: 128), flipped: false, drawingHandler: {
+            (dstRect: NSRect) -> Bool in
+            self.colorInContext.drawSwatch(in: dstRect)
+            let hexCode: NSString = NSString(string: self.hexCodeForColorInContext.stringValue)
+            let textAlignment = NSMutableParagraphStyle()
+            textAlignment.alignment = .center
+            textAlignment.minimumLineHeight = dstRect.height / 2
+            hexCode.draw(in: dstRect, withAttributes: [NSAttributedString.Key.paragraphStyle : textAlignment, NSAttributedString.Key.foregroundColor : NSColor.white, NSAttributedString.Key.font : NSFont(name: "Helvetica-Bold", size: 26)])
+            return true
+        }))
         appImageView.wantsLayer = true
         appImageView.layer?.borderWidth = 1
         appImageView.layer?.cornerRadius = 16
